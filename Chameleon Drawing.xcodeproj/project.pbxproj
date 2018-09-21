@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F34D274121555BBC00B6CC1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D274021555BBC00B6CC1A /* SettingsViewController.swift */; };
+		F34D2743215565AC00B6CC1A /* SketchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D2742215565AC00B6CC1A /* SketchViewModel.swift */; };
+		F34D274721558DDF00B6CC1A /* ViewPickingMediaFromGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D274621558DDF00B6CC1A /* ViewPickingMediaFromGallery.swift */; };
 		F3F2C90C215458BC00D9C5F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2C90B215458BC00D9C5F5 /* AppDelegate.swift */; };
 		F3F2C90E215458BC00D9C5F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2C90D215458BC00D9C5F5 /* ViewController.swift */; };
 		F3F2C911215458BC00D9C5F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F2C90F215458BC00D9C5F5 /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		F3F2C916215458BD00D9C5F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F2C915215458BD00D9C5F5 /* Assets.xcassets */; };
 		F3F2C919215458BD00D9C5F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F2C917215458BD00D9C5F5 /* LaunchScreen.storyboard */; };
 		F3F2C924215458BD00D9C5F5 /* Chameleon_DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2C923215458BD00D9C5F5 /* Chameleon_DrawingTests.swift */; };
+		F3F2C93021550E9800D9C5F5 /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2C92F21550E9800D9C5F5 /* CustomUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F34D274021555BBC00B6CC1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F34D2742215565AC00B6CC1A /* SketchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchViewModel.swift; sourceTree = "<group>"; };
+		F34D274621558DDF00B6CC1A /* ViewPickingMediaFromGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPickingMediaFromGallery.swift; sourceTree = "<group>"; };
 		F3F2C908215458BC00D9C5F5 /* Chameleon Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chameleon Drawing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F2C90B215458BC00D9C5F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3F2C90D215458BC00D9C5F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 		F3F2C91F215458BD00D9C5F5 /* Chameleon DrawingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chameleon DrawingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F2C923215458BD00D9C5F5 /* Chameleon_DrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chameleon_DrawingTests.swift; sourceTree = "<group>"; };
 		F3F2C925215458BD00D9C5F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3F2C92F21550E9800D9C5F5 /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F34D2744215582C600B6CC1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3F2C90D215458BC00D9C5F5 /* ViewController.swift */,
+				F34D274021555BBC00B6CC1A /* SettingsViewController.swift */,
+				F34D274621558DDF00B6CC1A /* ViewPickingMediaFromGallery.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F34D2745215582CC00B6CC1A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F34D2742215565AC00B6CC1A /* SketchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F3F2C8FF215458BC00D9C5F5 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +105,10 @@
 		F3F2C90A215458BC00D9C5F5 /* Chameleon Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				F34D2745215582CC00B6CC1A /* ViewModel */,
+				F34D2744215582C600B6CC1A /* Views */,
+				F3F2C92E21550E7D00D9C5F5 /* @IBDesignable */,
 				F3F2C90B215458BC00D9C5F5 /* AppDelegate.swift */,
-				F3F2C90D215458BC00D9C5F5 /* ViewController.swift */,
 				F3F2C90F215458BC00D9C5F5 /* Main.storyboard */,
 				F3F2C915215458BD00D9C5F5 /* Assets.xcassets */,
 				F3F2C917215458BD00D9C5F5 /* LaunchScreen.storyboard */,
@@ -97,6 +125,14 @@
 				F3F2C925215458BD00D9C5F5 /* Info.plist */,
 			);
 			path = "Chameleon DrawingTests";
+			sourceTree = "<group>";
+		};
+		F3F2C92E21550E7D00D9C5F5 /* @IBDesignable */ = {
+			isa = PBXGroup;
+			children = (
+				F3F2C92F21550E9800D9C5F5 /* CustomUI.swift */,
+			);
+			path = "@IBDesignable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +238,10 @@
 			files = (
 				F3F2C90E215458BC00D9C5F5 /* ViewController.swift in Sources */,
 				F3F2C90C215458BC00D9C5F5 /* AppDelegate.swift in Sources */,
+				F34D274721558DDF00B6CC1A /* ViewPickingMediaFromGallery.swift in Sources */,
+				F34D2743215565AC00B6CC1A /* SketchViewModel.swift in Sources */,
+				F3F2C93021550E9800D9C5F5 /* CustomUI.swift in Sources */,
+				F34D274121555BBC00B6CC1A /* SettingsViewController.swift in Sources */,
 				F3F2C914215458BC00D9C5F5 /* Chameleon_Drawing.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MAG9DAS3TQ;
 				INFOPLIST_FILE = "Chameleon Drawing/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MAG9DAS3TQ;
 				INFOPLIST_FILE = "Chameleon Drawing/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
