@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     // work Space where u can Drawing 🎨
     @IBOutlet weak var sketchSpace: UIImageView?
+    @IBOutlet weak var backGroundImage: UIImageView?
     // toolButton where u can select ur tool brush or eraser (✏️ or 🚿)
     @IBOutlet weak var toolButton: UIButton!
     // tool is Current tool that u use (✏️ or 🚿)
@@ -68,8 +69,17 @@ class ViewController: UIViewController {
         context?.setBlendMode(.normal)
         context?.setLineCap(.round)
         context?.setLineWidth(viewModel.brushSize)
-        context?.setStrokeColor(red: viewModel.red, green: viewModel.green, blue: viewModel.blue, alpha: viewModel.alpha)
-        context?.strokePath()
+        if viewModel.isDrawing {
+            context?.setStrokeColor(red: viewModel.red, green: viewModel.green, blue: viewModel.blue, alpha: viewModel.alpha)
+            context?.strokePath()
+        } else {
+            context?.setStrokeColor(UIColor.clear.cgColor)
+            context?.setFillColor(UIColor.clear.cgColor)
+            context!.setBlendMode(CGBlendMode.clear)
+            context?.closePath()
+            context?.drawPath(using: .fillStroke)
+        }
+        
         sketchSpace?.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
@@ -99,6 +109,7 @@ class ViewController: UIViewController {
     @IBAction func reset(_ sender: UIButton) {
         self.sketchSpace?.image = nil
         self.sketchSpace?.image = viewModel.selectedImage
+        self.backGroundImage?.image = viewModel.selectedImage
     }
     // where u can save ur changes in gallery
     @IBAction func saveImage(_ sender: UIButton) {
@@ -123,7 +134,9 @@ class ViewController: UIViewController {
     // to clear all changes
     @IBAction func clearAll(_ sender: UIButton) {
         self.sketchSpace?.image = nil
+        self.backGroundImage?.image = nil
         viewModel.selectedImage = nil
+        
         imageHistory = []
         imageHistory.append(sketchSpace?.image)
     }
@@ -132,17 +145,21 @@ class ViewController: UIViewController {
         
         switch sender.tag {
         case 0:
-            if imageHistory.count > 0 && index >= 1 {
+            if imageHistory.count > 0 && index >= 1 && imageHistory.count > index {
                 sketchSpace?.image = imageHistory[index - 1]
                 imageHistory.append(sketchSpace?.image)
                 index -= 1
                 undoCount += 1
+                if index == 1 {
+                    backGroundImage?.image = nil
+                }
             }
         default:
-            if index > -1 && index < imageHistory.count && imageHistory.count > 0 {
+            if index > 0 && index < imageHistory.count && imageHistory.count > 0 {
                 if undoCount > 0 {
                     imageHistory.removeLast()
                     sketchSpace?.image = imageHistory[imageHistory.count - 1]
+                    backGroundImage?.image = viewModel.selectedImage
                     undoCount -= 1
                     index += 1
                 }

@@ -22,6 +22,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let image = viewModel.selectedImage {
             sketchSpace?.image = image
             self.imageHistory.append(sketchSpace?.image)
+            backGroundImage?.image = image
         }
         dismiss(animated: true)
     }

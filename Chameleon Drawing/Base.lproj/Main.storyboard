@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iez-oW-V0k">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="41N-Ag-jje">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
@@ -232,7 +234,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgT-fw-M7K">
-                                <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agO-d5-3ss">
                                         <rect key="frame" x="261" y="10" width="30" height="30"/>
@@ -331,7 +333,7 @@
                                     <constraint firstItem="Cg2-tI-pk0" firstAttribute="top" secondItem="cgT-fw-M7K" secondAttribute="top" constant="10" id="oWT-kq-CLX"/>
                                     <constraint firstItem="oSx-P6-BAQ" firstAttribute="leading" secondItem="mbW-ON-hXu" secondAttribute="trailing" constant="8" id="s05-dM-ziN"/>
                                     <constraint firstItem="mbW-ON-hXu" firstAttribute="leading" secondItem="cgT-fw-M7K" secondAttribute="leading" constant="8" id="s0Q-9Z-Dt4"/>
-                                    <constraint firstAttribute="height" constant="48" id="scU-il-L2s"/>
+                                    <constraint firstAttribute="height" constant="67" id="scU-il-L2s"/>
                                     <constraint firstItem="agO-d5-3ss" firstAttribute="leading" secondItem="Cg2-tI-pk0" secondAttribute="trailing" constant="8" id="sin-K6-Ct7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -359,18 +361,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cgT-fw-M7K" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Y7-Cl-N7B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iez-oW-V0k" secondAttribute="trailing" id="4fM-bd-hWz"/>
                             <constraint firstItem="cgT-fw-M7K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="78t-oS-ls6"/>
                             <constraint firstItem="lGU-Nh-Pay" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A5P-9P-cuW"/>
+                            <constraint firstItem="Iez-oW-V0k" firstAttribute="top" secondItem="cgT-fw-M7K" secondAttribute="bottom" constant="-67" id="Bzz-NZ-hNV"/>
                             <constraint firstItem="41N-Ag-jje" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OZ7-sc-9KH"/>
                             <constraint firstItem="cgT-fw-M7K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TyL-lV-kXo"/>
                             <constraint firstAttribute="trailing" secondItem="41N-Ag-jje" secondAttribute="trailing" id="V5t-ae-JSU"/>
                             <constraint firstItem="lGU-Nh-Pay" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="40" id="b5g-xx-Iau"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iez-oW-V0k" secondAttribute="bottom" id="dXB-8r-zHb"/>
+                            <constraint firstItem="Iez-oW-V0k" firstAttribute="leading" secondItem="lGU-Nh-Pay" secondAttribute="trailing" constant="-51" id="eO0-ad-eWX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="41N-Ag-jje" secondAttribute="bottom" id="v7q-9a-qWF"/>
                             <constraint firstItem="41N-Ag-jje" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wO4-hj-bW3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backGroundImage" destination="Iez-oW-V0k" id="ifa-mn-dMz"/>
                         <outlet property="sketchSpace" destination="41N-Ag-jje" id="lWi-nj-NYI"/>
                         <outlet property="toolButton" destination="Cg2-tI-pk0" id="QWH-1v-jBP"/>
                     </connections>
