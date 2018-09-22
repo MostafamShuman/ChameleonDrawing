@@ -144,6 +144,7 @@ class ViewController: UIViewController {
                     imageHistory.removeLast()
                     sketchSpace?.image = imageHistory[imageHistory.count - 1]
                     undoCount -= 1
+                    index += 1
                 }
             }
         }

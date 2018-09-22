@@ -21,6 +21,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         viewModel.didFinishPickingMedia(with: info)
         if let image = viewModel.selectedImage {
             sketchSpace?.image = image
+            self.imageHistory.append(sketchSpace?.image)
         }
         dismiss(animated: true)
     }
